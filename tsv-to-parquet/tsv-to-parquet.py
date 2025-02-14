@@ -132,6 +132,6 @@ df = df.withColumn("ClientEventTime", to_timestamp(col("ClientEventTime"), "yyyy
 df = df.withColumn("LocalEventTime", to_timestamp(col("LocalEventTime"), "yyyy-MM-dd HH:mm:ss"))
 
 # Write to Parquet
-df.write.parquet("hits", mode="overwrite", compression="snappy")
+df.write.parquet("/path/to/output_parquet", mode="overwrite", compression="snappy")
 
 print("Conversion complete!")
